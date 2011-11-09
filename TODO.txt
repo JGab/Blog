@@ -1,0 +1,12 @@
+A faire:
+	faire le teste d'intégration
+
+	Modifier le code pour que le test d'intégration passe
+	Tester le code avec des tests unitaires 
+
+
+RAILS_ENV=test
+rake db:migrate
+
+
+rque : pour les conventions de nommage, faire un scaffhold dans un projet à coté
