@@ -1,0 +1,98 @@
+
+Copyright Notice
+
+   Copyright (C) The Internet (2011-tac-tac).
+
+											RFC-306.BolossDu34-q
+_______________________________ 	_______________________________
+|										| 	|										|			
+|  message1							|	|	Creer Message					|
+|	 message2						| 	|		titre ________________	|
+|  message3							|	|				|_lol tro dar___|	|
+|										| 	|										|
+|	 Creer_un_nouveau_message	| 	|		message______________	|
+|										|	|				|	ouaich g tro|	|
+|										| 	|				|	golri ouaich|	|
+|										|	|				|______________|	|
+|_____________________________|	|_____________________________|
+
+
+
+
+
+D'abord le test d'integration
+Visiter la page => existe pas -> creer controlleur
+action vue, etc
+
+
+assertions : 
+- Lister les messages(titre)
+- lien vers creation
+- click_lien => nouvelle page creation
+_______________________________________
+
+
+
+rspec nom_fichier va executer le fichier de test
+
+==> rails generate model Post (title et body)
+==> db:migrate
+
+==> rails generate controller Post
+
+==> connait pas methode 
+
+
+==> pour avoir les infos standards, notamment le conventions de nommage, utiliser
+> rails generate scaffold post title:string body:text
+pour pouvoir verifier les standards.
+
+
+
+
+
+
+DONE : 
+
+> rails g integration_test
+> rails g integration_test mainTest									// ouaich t'es un boloss faut mettre le nom !
+> gedit spec/requests/main_tests_spec.rb &
+> rspec spec/requests/main_tests_spec.rb							//lance le test associé
+  	==> 'uninitialized constant Post'
+> rails generate model post title:string body
+> rspec spec/requests/main_tests_spec.rb
+		==> 'Could not find table 'posts''
+> RAILS_ENV=test rake db:migrate
+> rspec																								//raccourci
+		==> undefined local variable or method `posts_path'
+> gedit /config/routes.rb
+		==> add "resources :posts"
+> rspec
+		==> 'uninitialized constant PostsController'
+> rails g controller post
+> rspec
+		==> 'uninitialized constant PostsController' 
+> rails g controller posts
+> rspec
+		==> 'The action 'index' could not be found for PostsController'
+> %% ajouter l'action index dans le controller de post
+> rspec
+		==> 'Missing template posts/index'
+> %% création de la vue associée
+
+
+
+Vérifier la présence d'un lien pour aller sur une autre vue
+
+
+
+
+
+
+
+
+
+
+
+
+

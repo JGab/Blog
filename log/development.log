@@ -38,3 +38,972 @@ Migrating to CreatePosts (20111104081449)
   [1m[35m (0.2ms)[0m  select sqlite_version(*)
   [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("posts")
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-11-09 16:55:54 +0100
+Served asset /rails.png - 200 OK (31ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-09 16:56:38 +0100
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+Rendered posts/index.html.erb within layouts/application (20.6ms)
+Compiled application.css  (15ms)  (pid 2961)
+Compiled post.css  (27ms)  (pid 2961)
+Compiled posts.css  (1ms)  (pid 2961)
+Compiled application.js  (34ms)  (pid 2961)
+Compiled jquery.js  (13ms)  (pid 2961)
+Compiled jquery_ujs.js  (0ms)  (pid 2961)
+Compiled post.js  (96ms)  (pid 2961)
+Compiled posts.js  (1ms)  (pid 2961)
+Completed 200 OK in 394ms (Views: 392.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-09 16:56:39 +0100
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-09 16:56:39 +0100
+Served asset /jquery.js - 200 OK (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-09 16:56:39 +0100
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-09 16:56:39 +0100
+Served asset /posts.css - 200 OK (2ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-09 16:56:39 +0100
+Served asset /post.css - 200 OK (2ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-09 16:56:39 +0100
+Served asset /post.js - 200 OK (1ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-09 16:56:39 +0100
+Served asset /posts.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-09 16:56:39 +0100
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-09 16:58:22 +0100
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" 
+ERROR: compiling _app_views_posts_index_html_erb__354696222_95162370 RAISED /home/testuser/Bureau/ruby/blog/app/views/posts/index.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/testuser/Bureau/ruby/blog/app/views/posts/index.html.erb:24: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_posts_index_html_erb__354696222_95162370(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "posts/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+'); @posts.each do |post| 
+@output_buffer.safe_concat('  <tr>
+    <td>');@output_buffer.append= ( post.title );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( post.body );@output_buffer.safe_concat('</td>
+</table>
+
+<br />
+
+');@output_buffer.append= ( link_to 'New Post', new_post_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:282:in `module_eval'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:282:in `compile'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:190:in `compile!'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:143:in `block in render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:55:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:142:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:99:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/testuser/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.1/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:268:in `block in retrieve_response_from_mimes'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:195:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/home/testuser/Bureau/ruby/blog/app/controllers/posts_controller.rb:7:in `index'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/base.rb:167:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:416:in `_run__173204692__process_action__304618633__callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/base.rb:121:in `process'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:45:in `process'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal.rb:193:in `dispatch'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal.rb:236:in `block in action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:532:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/etag.rb:23:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/conditionalget.rb:25:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/session/abstract/id.rb:195:in `context'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/session/abstract/id.rb:190:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/cookies.rb:331:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.1/lib/active_record/query_cache.rb:62:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/sendfile.rb:101:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.1/lib/rails/rack/logger.rb:13:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/methodoverride.rb:24:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/runtime.rb:17:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/lock.rb:15:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/static.rb:53:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.1/lib/rails/engine.rb:456:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.1/lib/rails/rack/content_length.rb:16:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.1/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/testuser/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/testuser/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/testuser/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered posts/index.html.erb within layouts/application (34.8ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (/home/testuser/Bureau/ruby/blog/app/views/posts/index.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/testuser/Bureau/ruby/blog/app/views/posts/index.html.erb:24: syntax error, unexpected $end, expecting keyword_end):
+    19: 
+    20: <%= link_to 'New Post', new_post_path %>
+  app/controllers/posts_controller.rb:7:in `index'
+
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-09 16:58:45 +0100
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+ERROR: compiling _app_views_posts_index_html_erb__354696222_95162370 RAISED /home/testuser/Bureau/ruby/blog/app/views/posts/index.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/testuser/Bureau/ruby/blog/app/views/posts/index.html.erb:24: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_posts_index_html_erb__354696222_95162370(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "posts/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+'); @posts.each do |post| 
+@output_buffer.safe_concat('  <tr>
+    <td>');@output_buffer.append= ( post.title );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( post.body );@output_buffer.safe_concat('</td>
+</table>
+
+<br />
+
+');@output_buffer.append= ( link_to 'New Post', new_post_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:282:in `module_eval'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:282:in `compile'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:190:in `compile!'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:143:in `block in render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:55:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/template.rb:142:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:99:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/testuser/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.1/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:268:in `block in retrieve_response_from_mimes'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:195:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/home/testuser/Bureau/ruby/blog/app/controllers/posts_controller.rb:7:in `index'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/base.rb:167:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:416:in `_run__173204692__process_action__304618633__callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/notifications.rb:53:in `instrument'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/base.rb:121:in `process'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/abstract_controller/rendering.rb:45:in `process'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal.rb:193:in `dispatch'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_controller/metal.rb:236:in `block in action'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/routing/route_set.rb:532:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/etag.rb:23:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/conditionalget.rb:25:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/session/abstract/id.rb:195:in `context'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/session/abstract/id.rb:190:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/cookies.rb:331:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.1/lib/active_record/query_cache.rb:62:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/sendfile.rb:101:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.1/lib/rails/rack/logger.rb:13:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/methodoverride.rb:24:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/runtime.rb:17:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/lock.rb:15:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/static.rb:53:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.1/lib/rails/engine.rb:456:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.1/lib/rails/rack/content_length.rb:16:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.1/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/testuser/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/testuser/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/testuser/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered posts/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (/home/testuser/Bureau/ruby/blog/app/views/posts/index.html.erb:22: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/testuser/Bureau/ruby/blog/app/views/posts/index.html.erb:24: syntax error, unexpected $end, expecting keyword_end):
+    19: 
+    20: <%= link_to 'New Post', new_post_path %>
+  app/controllers/posts_controller.rb:7:in `index'
+
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" 
+Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-09 16:59:07 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-09 16:59:08 +0100
+
+AbstractController::ActionNotFound (The action 'new' could not be found for PostsController):
+  
+
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-09 17:05:12 +0100
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+Rendered posts/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 114ms (Views: 113.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-09 17:05:13 +0100
+Served asset /posts.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-09 17:05:14 +0100
+Served asset /post.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-09 17:05:14 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-09 17:05:14 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-09 17:05:14 +0100
+Served asset /posts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-09 17:05:14 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-09 17:05:14 +0100
+Served asset /post.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-09 17:05:14 +0100
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-09 17:05:15 +0100
+  Processing by PostsController#new as HTML
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError (undefined method `redirect' for #<PostsController:0x87fd098>):
+  app/controllers/posts_controller.rb:13:in `new'
+
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-09 17:24:00 +0100
+  Processing by PostsController#new as HTML
+Completed 500 Internal Server Error in 40ms
+
+ActionView::MissingTemplate (Missing template posts/new, application/new with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/home/testuser/Bureau/ruby/blog/app/views"
+):
+  app/controllers/posts_controller.rb:14:in `new'
+
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-09 17:24:03 +0100
+  Processing by PostsController#new as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActionView::MissingTemplate (Missing template posts/new, application/new with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/home/testuser/Bureau/ruby/blog/app/views"
+):
+  app/controllers/posts_controller.rb:14:in `new'
+
+Rendered /home/testuser/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (9.0ms)
+Rendered posts/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-09 17:36:19 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-10 08:12:35 +0100
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+Rendered posts/index.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 295ms (Views: 294.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:12:37 +0100
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:37 +0100
+Served asset /jquery_ujs.js - 200 OK (11ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:12:37 +0100
+Served asset /posts.css - 200 OK (5ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:12:37 +0100
+Served asset /post.css - 200 OK (2ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:37 +0100
+Served asset /post.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:37 +0100
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:37 +0100
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:37 +0100
+Served asset /posts.js - 200 OK (5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-10 08:12:42 +0100
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (8.4ms)
+Rendered posts/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:12:42 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:42 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:12:43 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:43 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:12:43 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:43 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:43 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:12:43 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+  Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zu75ZqneBpfVai1HZMzYDbkvJzFrxJqFOkI0jviK8yM=", "post"=>{"title"=>"", "body"=>""}, "commit"=>"Create Post"}
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 6ms
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" 
+Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:02 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (7.5ms)
+Rendered posts/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:05 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+  Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zu75ZqneBpfVai1HZMzYDbkvJzFrxJqFOkI0jviK8yM=", "post"=>{"title"=>"cfrecr", "body"=>"pdzedz"}, "commit"=>"Create Post"}
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 6ms
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+Rendered posts/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:12 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (7.0ms)
+Rendered posts/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:34:19 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2011-11-10 08:53:41 +0100
+  Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zu75ZqneBpfVai1HZMzYDbkvJzFrxJqFOkI0jviK8yM=", "post"=>{"title"=>"ezdez", "body"=>""}, "commit"=>"Create Post"}
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 7ms
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-10 08:53:41 +0100
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" 
+Rendered posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:42 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:42 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:42 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:42 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:42 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:42 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:42 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:42 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (7.4ms)
+Rendered posts/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:46 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+  Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zu75ZqneBpfVai1HZMzYDbkvJzFrxJqFOkI0jviK8yM=", "post"=>{"title"=>"dezdez", "body"=>""}, "commit"=>"Create Post"}
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 6ms
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 08:53:49 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (7.0ms)
+Rendered posts/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:27 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+  Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zu75ZqneBpfVai1HZMzYDbkvJzFrxJqFOkI0jviK8yM=", "post"=>{"title"=>"dazddza", "body"=>"dzaa"}, "commit"=>"Create Post"}
+  [1m[35mSQL (53.9ms)[0m  INSERT INTO "posts" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "dzaa"], ["created_at", Thu, 10 Nov 2011 08:01:34 UTC +00:00], ["title", "dazddza"], ["updated_at", Thu, 10 Nov 2011 08:01:34 UTC +00:00]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 192ms
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" [0m
+Rendered posts/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+Served asset /post.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/post.css?body=1" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+Served asset /post.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-11-10 09:01:34 +0100
+Served asset /application.js - 304 Not Modified (0ms)
